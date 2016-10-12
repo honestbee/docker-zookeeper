@@ -8,8 +8,6 @@ metadata:
     service: zookeeper
     zookeeper_id: "1"
 spec:
-  type: ClusterIP
-  clusterIP: 10.200.10.31
   ports:
     - name: client
       port: 2181
@@ -17,6 +15,8 @@ spec:
       port: 2888
     - name: election
       port: 3888
+  clusterIP: 10.3.0.31
+  type: ClusterIP
   selector:
     name: zookeeper-1
     zookeeper_id: "1"
